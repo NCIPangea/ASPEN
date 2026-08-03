@@ -1,5 +1,7 @@
 ## ASPEN development version
 
+- Add `hs1_chrR` as a supported reference genome (T2T-CHM13 + chrR rDNA unit from [Paralkar lab](https://github.com/vikramparalkar/rDNA-Mapping-Genomes)). (#117, @kopardev)
+
 ## ASPEN 1.1.2
 
 - Fix broken data path for biowulf. (#104, @kelly-sovacool)

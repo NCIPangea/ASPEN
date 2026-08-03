@@ -15,6 +15,8 @@
 | mm10            | Mouse           | _Mus musculus_   |
 | mmul10          | Rhesus Monkey   | _Macaca mulatta_ |
 | bosTau9         | Domestic Cattle | _Bos taurus_     |
+| hs1             | Human           | _Homo sapiens_ (T2T-CHM13) |
+| hs1_chrR        | Human           | _Homo sapiens_ (T2T-CHM13 + chrR rDNA unit) |
 
 - **Spike-in genomes supported**: Spike-in genomes supported is limited to:
 

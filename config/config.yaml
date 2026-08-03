@@ -32,6 +32,8 @@ genome: "$GENOME"
 # genome: "mm10"
 # genome: "mmul10"
 # genome: "bosTau9" # this is same as ARS-UCD1.2
+# genome: "hs1"
+# genome: "hs1_chrR" # hs1 (T2T-CHM13) + chrR (rDNA unit); see https://github.com/vikramparalkar/rDNA-Mapping-Genomes
 
 #
 spikein: False
