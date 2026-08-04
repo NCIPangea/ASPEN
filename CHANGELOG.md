@@ -1,6 +1,7 @@
 ## ASPEN development version
 
 - Add `hs1_chrR` as a supported reference genome (T2T-CHM13 + chrR rDNA unit from [Paralkar lab](https://github.com/vikramparalkar/rDNA-Mapping-Genomes)). (#117, @kopardev)
+- Fix `ZeroDivisionError` in `_ccbr_counts2density.py` when TSS flanking bins have zero reads (e.g. genes on `chrR`); emit 0.0 enrichment instead of crashing. (#122, @kopardev)
 
 ## ASPEN 1.1.2
 
