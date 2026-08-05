@@ -118,6 +118,12 @@ pa <- annotatePeak(
 
 padf <- as.data.frame(pa)
 padf$peakID <- paste(padf$seqnames, ":", padf$start, "-", padf$end, sep = "")
+# Gene annotation columns may be absent when ChIPseeker cannot map TxDb gene IDs
+# through the org.*.db (e.g. T2T assemblies with RefSeq-based TxDb). Fill with NA
+# so downstream column selection succeeds regardless.
+for (col in c("ENSEMBL", "SYMBOL", "GENENAME")) {
+  if (!col %in% colnames(padf)) padf[[col]] <- NA_character_
+}
 merged <- merge(padf, np, by = "peakID")
 merged <- merged[
   ,
