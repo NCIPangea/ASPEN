@@ -35,7 +35,7 @@ parser$add_argument("-w", "--peakWidth",
 args <- parser$parse_args()
 offset <- round(args$peakWidth / 2)
 
-suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("dplyr"))
 
 debug <- 0
 

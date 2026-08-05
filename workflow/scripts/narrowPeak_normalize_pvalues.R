@@ -21,7 +21,7 @@ parser$add_argument("-o", "--outputNarrowPeak",
 
 
 args <- parser$parse_args()
-suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("dplyr"))
 
 debug <- 0
 

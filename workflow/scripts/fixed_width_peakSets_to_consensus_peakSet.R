@@ -47,7 +47,7 @@ args <- parser$parse_args()
 norm_pvalue_threshold <- args$cutoffSPM
 min_replicates <- args$minReps
 
-suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("dplyr"))
 
 debug <- 0
 
