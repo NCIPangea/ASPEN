@@ -5,6 +5,10 @@
 - Fix `object 'tdb' not found` crash in `ccbr_annotate_bed.R` and `ccbr_annotate_peaks.R` for `hs1`/`hs1_chrR` genomes by adding T2T-CHM13v2.0 TxDb dispatch (pre-built SQLite shipped in `nciccbr/ccbr_atacseq:v13-feat`). (#123, @kopardev)
 - Bump `masterdocker` container to `nciccbr/ccbr_atacseq:v13-feat`. (#123, @kopardev)
 - Fix `_ThreadedGzipWriter` cutadapt crash in `trim` rule by pinning `trim` to `nciccbr/ccbr_atacseq:v11-feat` (`cutadaptdocker`); all other rules use `v13-feat` (`masterdocker`). (#124, @kopardev)
+- Fix `Error in library("org.Bt.eg.db")` crash by loading bosTau9/mmul10 Bioconductor packages on-demand instead of unconditionally at script top (`ccbr_annotate_bed.R`, `ccbr_annotate_peaks.R`); `org.Bt.eg.db` and `org.Mmu.eg.db` are absent from `v13-feat`. (#124, @kopardev)
+- Fix `there is no package called 'tidyverse'` crash in fixed-width peak-calling scripts by replacing `library("tidyverse")` with `library("dplyr")` in `fixed_width_peakSets_to_consensus_peakSet.R`, `narrowPeak_normalize_pvalues.R`, and `narrowPeak_to_fixed_width_peakSet.R`; only `dplyr` functions are used and `tidyverse` is absent from `v13-feat`. (#124, @kopardev)
+- Fix `undefined columns selected` crash in `ccbr_annotate_bed.R` and `ccbr_annotate_peaks.R` when ChIPseeker cannot map T2T TxDb gene IDs through `org.Hs.eg.db`; `ENSEMBL`, `SYMBOL`, and `GENENAME` columns are now filled with `NA` when absent. (#123, @kopardev)
+- Fix `mv: cannot stat '*.annotated': No such file or directory` crash in `ccbr_atac_genrich_peak_calling.bash` and `ccbr_atac_macs2_peak_calling.bash` for `hs1`/`hs1_chrR` by adding both genomes to the `genome_is_known` check so ChIPseeker annotation runs for T2T assemblies. (#117, @kopardev)
 
 ## ASPEN 1.1.2
 
