@@ -34,7 +34,7 @@ rule trim:
         replicate="{replicate}",
         scriptsdir=SCRIPTSDIR,
         script="ccbr_cutadapt_pe.bash"
-    container: config["masterdocker"]
+    container: config["cutadaptdocker"]
     threads: getthreads("trim")
     shell:"""
 if [ -w "/lscratch/${{SLURM_JOB_ID}}" ];then cd /lscratch/${{SLURM_JOB_ID}};else cd /dev/shm;fi
