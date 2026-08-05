@@ -10,10 +10,7 @@ suppressPackageStartupMessages(library("TxDb.Mmusculus.UCSC.mm10.knownGene"))
 suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("org.Mm.eg.db"))
 
-suppressPackageStartupMessages(library("TxDb.Btaurus.UCSC.bosTau9.refGene"))
-suppressPackageStartupMessages(library("TxDb.Mmulatta.UCSC.rheMac10.refGene"))
-suppressPackageStartupMessages(library("org.Mmu.eg.db"))
-suppressPackageStartupMessages(library("org.Bt.eg.db"))
+# NB: TxDb.Btaurus / TxDb.Mmulatta / org.Mmu / org.Bt loaded on-demand below
 
 parser <- ArgumentParser()
 
@@ -73,9 +70,11 @@ if (args$genome == "mm10") {
   tdb <- TxDb.Mmusculus.UCSC.mm10.knownGene
 }
 if (args$genome == "mmul10") {
+  suppressPackageStartupMessages(library("TxDb.Mmulatta.UCSC.rheMac10.refGene"))
   tdb <- TxDb.Mmulatta.UCSC.rheMac10.refGene
 }
 if (args$genome == "bosTau9") {
+  suppressPackageStartupMessages(library("TxDb.Btaurus.UCSC.bosTau9.refGene"))
   tdb <- TxDb.Btaurus.UCSC.bosTau9.refGene
 }
 if (args$genome %in% c("hs1", "hs1_chrR")) {
