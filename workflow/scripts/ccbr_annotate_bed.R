@@ -35,7 +35,7 @@ parser$add_argument("-l", "--genelist", required = TRUE, help = "list of genes w
 parser$add_argument("-f", "--atypefreq", required = TRUE, help = "frequency of different annotation types")
 parser$add_argument("-g", "--genome",
   required = TRUE, dest = "genome",
-  help = "hg38/hg19/mm10/mm9/mmul10/bosTau9"
+  help = "hg38/hg19/mm10/mm9/mmul10/bosTau9/hs1/hs1_chrR"
 )
 
 # get command line options, if help option encountered print help and exit,
@@ -56,6 +56,9 @@ if (args$genome == "mmul10") {
 if (args$genome == "bosTau9") {
   adb <- "org.Bt.eg.db"
 }
+if (args$genome %in% c("hs1", "hs1_chrR")) {
+  adb <- "org.Hs.eg.db"
+}
 
 if (args$genome == "hg19") {
   tdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
@@ -74,6 +77,9 @@ if (args$genome == "mmul10") {
 }
 if (args$genome == "bosTau9") {
   tdb <- TxDb.Btaurus.UCSC.bosTau9.refGene
+}
+if (args$genome %in% c("hs1", "hs1_chrR")) {
+  tdb <- AnnotationDbi::loadDb("/opt2/annotation/TxDb.Hsapiens.NCBI.T2T.CHM13v2.0.sqlite")
 }
 
 

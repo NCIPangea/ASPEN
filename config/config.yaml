@@ -207,7 +207,7 @@ fastqscreen_config: "$PIPELINE_HOME/config/fastq_screen_config.txt"
 
 # Containers
 # masterdocker: "docker://nciccbr/ccbr_atacseq:v0.1.29"
-masterdocker: "docker://nciccbr/ccbr_atacseq:v11-feat"
+masterdocker: "docker://nciccbr/ccbr_atacseq:v13-feat"
 baser: "docker://nciccbr/ccbr_baser:230531"
 bwadocker: "docker://nciccbr/ccbr_bwa_mem2_2.2.1:v1-feat"
 deeptoolsdocker: "docker://nciccbr/ccbr_deeptools_3.5.6:v1-feat"
