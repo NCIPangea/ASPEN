@@ -4,7 +4,7 @@
 - Fix `ZeroDivisionError` in `_ccbr_counts2density.py` when TSS flanking bins have zero reads (e.g. genes on `chrR`); emit 0.0 enrichment instead of crashing. (#122, @kopardev)
 - Fix `object 'tdb' not found` crash in `ccbr_annotate_bed.R` and `ccbr_annotate_peaks.R` for `hs1`/`hs1_chrR` genomes by adding T2T-CHM13v2.0 TxDb dispatch (pre-built SQLite shipped in `nciccbr/ccbr_atacseq:v13-feat`). (#123, @kopardev)
 - Bump `masterdocker` container to `nciccbr/ccbr_atacseq:v13-feat`. (#123, @kopardev)
-- Fix `_ThreadedGzipWriter` cutadapt crash in `trim` rule by switching to dedicated `nciccbr/ccbr_cutadapt_1.18:v3` container (`cutadaptdocker`). (#124, @kopardev)
+- Fix `_ThreadedGzipWriter` cutadapt crash in `trim` rule by pinning `trim` to `nciccbr/ccbr_atacseq:v11-feat` (`cutadaptdocker`); all other rules use `v13-feat` (`masterdocker`). (#124, @kopardev)
 
 ## ASPEN 1.1.2
 
