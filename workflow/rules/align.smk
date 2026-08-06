@@ -364,7 +364,8 @@ samtools sort -@ {threads} -n -o ${{TMPDIR}}/{params.replicate}.qSorted.bam {inp
 python {params.scriptsdir}/{params.script} \
     --bam ${{TMPDIR}}/{params.replicate}.qSorted.bam \
     --tn5bed ${{TMPDIR}}/{params.replicate}.tn5sites.bed \
-    --readsbed ${{TMPDIR}}/{params.replicate}.reads.bed
+    --readsbed ${{TMPDIR}}/{params.replicate}.reads.bed \
+    --genomefile {params.genomefile}
 
 # Sort the tn5 bed file
 bedSort ${{TMPDIR}}/{params.replicate}.tn5sites.bed  ${{TMPDIR}}/{params.replicate}.tn5sites.bed
