@@ -177,7 +177,7 @@ rule diffatac:
         fc_cutoff   = config['contrasts_fc_cutoff'],
         fdr_cutoff  = config['contrasts_fdr_cutoff'],
         manifest    = config['samplemanifest'],
-    container: config['baser']
+    container: config['masterdocker']
     shell:"""
 set -exo pipefail
 TMPDIR="/lscratch/$SLURM_JOB_ID"
@@ -254,7 +254,7 @@ rule diffatac_aggregate:
         genome      = config['genome'],
         fc_cutoff   = config['contrasts_fc_cutoff'],
         fdr_cutoff  = config['contrasts_fdr_cutoff'],
-    container:config['baser']
+    container:config['masterdocker']
     shell:"""
 set -exo pipefail
 TMPDIR="/lscratch/$SLURM_JOB_ID"

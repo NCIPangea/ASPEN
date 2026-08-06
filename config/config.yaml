@@ -206,17 +206,12 @@ jaccard_min_peaks: 1000
 fastqscreen_config: "$PIPELINE_HOME/config/fastq_screen_config.txt"
 
 # Containers
-# masterdocker: "docker://nciccbr/ccbr_atacseq:v0.1.29"
 masterdocker: "docker://nciccbr/ccbr_atacseq:v13-feat"
 cutadaptdocker: "docker://nciccbr/ccbr_atacseq:v11-feat"
-baser: "docker://nciccbr/ccbr_baser:230531"
 bwadocker: "docker://nciccbr/ccbr_bwa_mem2_2.2.1:v1-feat"
 deeptoolsdocker: "docker://nciccbr/ccbr_deeptools_3.5.6:v1-feat"
-fastqcdocker: "docker://nciccbr/ccbr_fastqc_0.11.9:v1.1"
 fastqscreendocker: "docker://nciccbr/ccbr_fastq_screen_0.14.1:v1.0"
-# featurecounts: "docker://genomicpariscentre/featurecounts:1.5.3"
 featurecountsdocker: "docker://dsaha0295/featurecounts:latest"
-ucscdocker: "docker://nciccbr/ccbr_ucsc_v385:v2-feat"
 
 # pipeline information
 pipeline: "ASPEN"
