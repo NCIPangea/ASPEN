@@ -124,6 +124,24 @@ if (params$genome == "mm10") {
   pieplot <- pie(table_anno, col = piecolor)
   x <- 2
 }
+if (params$genome %in% c("hs1", "hs1_chrR")) {
+  txdb <- AnnotationDbi::loadDb("/opt2/annotation/TxDb.Hsapiens.NCBI.T2T.CHM13v2.0.sqlite")
+  roiAnno <- annotatePeak(roi,
+    tssRegion = c(-2000, 200),
+    TxDb = txdb, annoDb = "org.Hs.eg.db"
+  )
+  roiAnnodf <- as.data.frame(roiAnno)
+  # T2T TxDb gene IDs may not map through org.Hs.eg.db; ensure ENSEMBL/SYMBOL/GENENAME
+  # columns exist (even if NA) since SYMBOL is referenced downstream (e.g. volcano plot).
+  for (col in c("ENSEMBL", "SYMBOL", "GENENAME")) {
+    if (!col %in% colnames(roiAnnodf)) roiAnnodf[[col]] <- NA_character_
+  }
+  roiAnnodf$shortAnno <- stringr::word(roiAnnodf$annotation, 1)
+  table_anno <- table(roiAnnodf$shortAnno)
+  piecolor <- brewer.pal(length(table_anno), "Set2")
+  pieplot <- pie(table_anno, col = piecolor)
+  x <- 3
+}
 ```
 
 
