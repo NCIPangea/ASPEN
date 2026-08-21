@@ -17,6 +17,7 @@
 - Document how per-sample consensus and ROI-level consensus peaks are generated, including config knobs (`consensus_min_replicates`, `consensus_min_spm`, `fixed_width`). (#84, @kopardev)
 - Fix missing FRIP values in `FRiP_stats.tsv` caused by wrong `cut` column indices in `_qc_create_frip_stats_table.bash`; `cut -f2,3` extracted metric labels instead of peakcaller+value — corrected to `cut -f3,4`. (#103, @kopardev)
 - Fix DiffATAC silently skipping for all genomes except `hg38` and `mm10`; replace hard-coded genome guard with `DIFFATAC_SUPPORTED_GENOMES` set covering all annotation-supported genomes (`hg19`, `hg38`, `mm10`, `mmul10`, `bosTau9`, `hs1`, `hs1_chrR`). (#128, @kopardev)
+- Write DESeq2 size-factor-normalized counts matrix (`{contrast}.normalized_counts.tsv`) to the DiffATAC output directory alongside each per-contrast differential results TSV. (#68, @kopardev)
 
 ## ASPEN 1.1.2
 
