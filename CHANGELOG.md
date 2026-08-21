@@ -11,6 +11,10 @@
 - Fix `mv: cannot stat '*.annotated': No such file or directory` crash in `ccbr_atac_genrich_peak_calling.bash` and `ccbr_atac_macs2_peak_calling.bash` for `hs1`/`hs1_chrR` by adding both genomes to the `genome_is_known` check so ChIPseeker annotation runs for T2T assemblies. (#117, @kopardev)
 - Remove orphan scripts with no pipeline references: `picardcloud.jar` (Picard is called via in-container path `/opt2/picardcloud.jar`), `ccbr_atac_trim_align_pe.bash` (superseded by separate `trim` + `align` rules), `ccbr_bam_filter_by_mapq.py`, `atac_assign_multimappers.py`, and `script1.py`. (@kopardev)
 - Restore `ccbr_bam_filter_by_mapq.py` because it is used by `ccbr_bowtie2_align_pe.bash` in the `align` workflow step. (@kopardev)
+- Reduce `trim` rule RAM from 120 g to 48 g and increase walltime from 12 h to 16 h. (#112, @kopardev)
+- Increase walltime for `align`, `align2spikein`, and `atac_tss` rules from 12 h to 24 h. (#114, @kopardev)
+- Clarify `replicateName` as a biological replicate identifier in docs; add warning explaining biological vs technical replicates with lane-merging example. (#110, @kopardev)
+- Document how per-sample consensus and ROI-level consensus peaks are generated, including config knobs (`consensus_min_replicates`, `consensus_min_spm`, `fixed_width`). (#84, @kopardev)
 
 ## ASPEN 1.1.2
 
