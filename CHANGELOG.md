@@ -15,6 +15,7 @@
 - Increase walltime for `align`, `align2spikein`, and `atac_tss` rules from 12 h to 24 h. (#114, @kopardev)
 - Clarify `replicateName` as a biological replicate identifier in docs; add warning explaining biological vs technical replicates with lane-merging example. (#110, @kopardev)
 - Document how per-sample consensus and ROI-level consensus peaks are generated, including config knobs (`consensus_min_replicates`, `consensus_min_spm`, `fixed_width`). (#84, @kopardev)
+- Fix missing FRIP values in `FRiP_stats.tsv` caused by wrong `cut` column indices in `_qc_create_frip_stats_table.bash`; `cut -f2,3` extracted metric labels instead of peakcaller+value — corrected to `cut -f3,4`. (#103, @kopardev)
 
 ## ASPEN 1.1.2
 
