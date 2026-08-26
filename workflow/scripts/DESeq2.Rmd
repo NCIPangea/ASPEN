@@ -32,7 +32,6 @@ params:
 knitr::opts_chunk$set(echo = TRUE)
 suppressPackageStartupMessages(library("DESeq2"))
 suppressPackageStartupMessages(library("edgeR"))
-suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("dplyr"))
 suppressPackageStartupMessages(library("DT"))
 suppressPackageStartupMessages(library("reshape2"))
