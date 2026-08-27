@@ -107,6 +107,8 @@ Here is a list of genome supported by aspen:
   * mm10          [Mouse]
   * mmul10        [Macaca mulatta(Rhesus monkey) or rheMac10]
   * bosTau9       [Bos taurus(cattle)]
+  * hs1           [Human T2T-CHM13]
+  * hs1_chrR      [Human T2T-CHM13 + chrR rDNA unit]
 
 aspen calls peaks using the following tools:
 

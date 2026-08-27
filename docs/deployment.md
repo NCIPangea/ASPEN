@@ -142,8 +142,8 @@ VersionInfo:
   python          : python/3.10
   snakemake       : snakemake
   pipeline_home   : /data/CCBR_Pipeliner/Pipelines/ASPEN/feature_spikeins
-  git commit/tag  : fc0699d6a7f9766963c8e7020c01214966616fab    v1.0.6-29-gfc0699d
-  aspen_version   : v1.0.6-dev-spikeins
+  git commit/tag  : 4ab396420595c4ccf15416a4c11b523b2d0db862    v1.2.0
+  aspen_version   : v1.2.0
 
 ##########################################################################################
 ```
